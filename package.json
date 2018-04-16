@@ -1,0 +1,22 @@
+{
+  "name": "marketing-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "@markhker",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.8.3",
+    "postcss-modules": "^1.1.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
