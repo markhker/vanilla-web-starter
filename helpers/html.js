@@ -8,7 +8,7 @@ export function createElement (markup) {
   return frag
 }
 
-export function insert (target, fragment, position) {
+export function insert (target, fragment, position = 'append') {
   if (!target) return
   let el
   if (typeof target === 'string') {
@@ -16,7 +16,12 @@ export function insert (target, fragment, position) {
   } else if (target.nodeName) {
     el = target
   }
-  if (!position || position === 'append') {
+
+  while (el.firstChild) {
+    el.removeChild(el.firstChild)
+  }
+
+  if (position === 'append') {
     el.appendChild(fragment)
   } else if (position === 'prepend') {
     el.insertBefore(fragment, el.firstChild)
