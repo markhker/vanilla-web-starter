@@ -1,26 +1,95 @@
-$primary: #3185FC;
-$blue: #26547C;
-$red: #EF476F;
-$accentRed: #E84855;
-$yellow: #FFD166;
-$accentYellow: #F9DC5C;
-$green: #06D6A0;
-$accentGreen: #00A878;
-$lighgrey: #FCFCFC;
+@import 'vars';
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans:400,700');
 
-$w: #fff;
-$k: #212121;
-$bk: #333745;
-$sk: #38393C;
-$g: #515052;
-
-
-body {
-    background-color: $lighgrey;
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-size: 100%;
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
 }
 
-#message {
-    color: $primary;
-    font-size: 3em;
-    text-align: center;
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $primary;
+  color: $bk;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  background-color: $lighgrey;
+}
+
+h1 {
+  font-family: 'Arvo', serif;
+}
+
+.mainHeader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.path1 {
+  position: absolute;
+  top: 80vh;
+  border-top-left-radius: 5%;
+	transform: rotate(-25deg) skew(25deg, 0) translateX(65%);
+  height: 150rem;
+  width: 150rem;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  z-index: 9;
+}
+
+.path2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 70vh;
+  width: 80vw;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  z-index: 10;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  max-width: 100rem;
+
+  & .mainLogo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 5rem;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
